@@ -223,7 +223,7 @@ TYPEID		: [A-Z][a-z|A-Z|0-9|_]* ;
 INT_CONST	: [0-9]+ ;
 LPAREN		: '(' ;
 RPAREN		: ')' ;
-COLON		: ':' ;
+COLOGNE		: ':' ;
 ATSYM		: '@' ;
 COMMA		: ',' ;
 PLUS		: '+' ;
