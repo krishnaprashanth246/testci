@@ -9,7 +9,7 @@ tokens{
 	STR_CONST,
 	LPAREN,
 	RPAREN,
-	COLON,
+	COLOGNE,
 	ATSYM,
 	SEMICOLON,
 	COMMA,
@@ -44,7 +44,6 @@ tokens{
 	ISVOID,
 	NOT
 }
-
 /*
   DO NOT EDIT CODE ABOVE THIS LINE
 */
@@ -223,7 +222,7 @@ TYPEID		: [A-Z][a-z|A-Z|0-9|_]* ;
 INT_CONST	: [0-9]+ ;
 LPAREN		: '(' ;
 RPAREN		: ')' ;
-COLON		: ':' ;
+COLOGNE		: ':' ;
 ATSYM		: '@' ;
 COMMA		: ',' ;
 PLUS		: '+' ;
