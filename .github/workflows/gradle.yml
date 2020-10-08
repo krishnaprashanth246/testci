@@ -26,7 +26,7 @@ jobs:
     #  run: chmod +x gradlew
     #- name: Build with Gradle
     #  run: ./gradlew build
-    -name: build lexer
-     run: make
-    -name: clean
-     run: make clean
+    - name: build lexer
+      run: make
+    - name: clean
+      run: make clean
