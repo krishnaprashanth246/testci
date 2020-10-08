@@ -198,6 +198,8 @@ tokens{
 	WRITE ALL LEXER RULES BELOW
 */
 
+fragment IN_SINGLE_COMMENT : ~('\n');
+
 SEMICOLON   : ';';
 DARROW      : '=>';
 CLASS		: [Cc][Ll][Aa][Ss][Ss] ;
@@ -240,7 +242,8 @@ LE  		: '<=' ;
 ASSIGN		: '<-' ;
 WHITESPACE	: [ \t\r\n\f\b\u000b]+ -> skip ;	// skip spaces, tabs, newlines
 
-SINGLE_LINE_COMMENT	: '--' .*? ('\n'|EOF) -> skip ;	//EOF in single line comment is not an error
+SINGLE_LINE_COMMENT	: ('--' IN_SINGLE_COMMENT* '\n' 						//single line comment
+					    | '--' IN_SINGLE_COMMENT* (EOF))  -> skip;          //EOF in single line comment is not an error
 
 STRAY_COMMENT	: '*)' {reportError("Unmatched *)");};
 
