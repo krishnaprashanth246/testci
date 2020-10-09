@@ -274,6 +274,7 @@ INCOM_TEXT	: . -> skip ;		//ignore everything inside comment
 mode STRING_MODE;
 
 // send every possibility of being a string to processString function along with errors
+SINGLE_BACKSLASH	:  ('\\')'"' {reportError("Single backslash in string");}
 STRING_END		: (~('"'|'\n'|'\u001a'|'\\') | ('\\'.) )*?'"' {processString();} ->mode(DEFAULT_MODE) ;	
 NEWLINE_UNESC	: (~('"'|'\n'|'\u001a'|'\\') | ('\\'.) )*?'\n' {processString();} -> mode(DEFAULT_MODE) ;
 EOF_IN_STR		: (~('"'|'\n'|'\u001a'|'\\') | ('\\'.) )*?('\\')?(EOF) {processString();} ->  mode(DEFAULT_MODE) ;
