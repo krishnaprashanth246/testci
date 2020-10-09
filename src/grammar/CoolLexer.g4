@@ -87,13 +87,13 @@ tokens{
 					j++;
 					if(j==text.length()-1)	//misc case where the last \n is escaped, this contains EOF
 					{
-						reportError("EOF in string constant");
+						reportError("EOF in string constant")
 						return;
 					}
 				}
 				if (text.charAt(j)=='\u0000')
 				{
-					reportError("String contains null character.");
+					reportError("String contains null character.")
 					return;
 				}
 			}
@@ -101,7 +101,7 @@ tokens{
 			{
 				if ((j == 1025) && (text.charAt(j)=='\n'))	//accounting for the misc case of 1025 character string
 				{
-					reportError("Unterminated string constant");
+					reportError("Unterminated string constant")
 					return;
 				}
 				reportError("String constant too long");
